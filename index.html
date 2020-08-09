@@ -8,12 +8,50 @@
 </head>
 <body>
   
-
+  
+  <div class="wrapper">
+    <input id="tasks" type="text" autocomplete="off" spellcheck="false">
+    <!-- <button id="addButton">+</button> -->
+    <ol id="users"></ol>
+  </div>
   
   
+  
+  <script type="text/javascript">
+    function myFunction () {
+      
+      
+      
+    }
+    
+    // addButton.onclick = myFunction
+    
+    tasks.onkeyup = function (event) {
+      
+      if (event.keyCode === 13) {
+        
+        const newLi = document.createElement('LI')
+        newLi.textContent = tasks.value
+        
+        const remBtn = document.createElement ("button")
+        // remBtn.textContent = tasks.value
 
-  <script>
-
+        newLi.appendChild(remBtn)
+        
+        users.appendChild(newLi)
+        
+        tasks.value = ''
+        
+        remBtn.onclick = function () {
+          
+          remBtn.remove()
+          newLi.remove()
+          
+        } 
+      }
+    }
+    
+    
   </script>
 </body>
 </html>
